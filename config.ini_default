@@ -1,0 +1,18 @@
+; Creator: Ivelin Vasilev
+;    Date: 23.12.2015
+
+[questioner]
+from = 'example@example.bg'
+to = 'example@example.bg'
+cc = 'example@example.bg'
+bcc = 'example@example.bg'
+
+; DB part
+[db_system]
+dbServer = 'localhost'
+dbUser = 'example'
+dbPass = 'example'
+dbName = 'example'
+dbPort = xxxx
+dbSocket = 'example'
+

@@ -1,0 +1,52 @@
+<?php
+ini_set('display_errors','On');
+//session_destroy();
+date_default_timezone_set('Europe/Sofia');
+
+/* Command line constants */
+$getBase = trim(basename (`pwd`));
+$getBase = ($getBase) ? "/$getBase/" : '';
+// Пълният път до хома 
+define('ENV_HOME', '/home/envdev/www'.$getBase);
+
+// Ако искаме да отместим проекта в дълбочина след ENV_HOME по принцип празно
+define('PROJECT_HOME', '');
+
+// Пълен път на команден ред CLI_HOME Command Line Interface
+define('CLI_HOME', ENV_HOME.PROJECT_HOME);
+define("ROOT", CLI_HOME);
+
+// Нахождение на config.ini ако искаме да имаме
+define('BASE_CONFIG_FILE', ROOT."/config.ini");
+
+// Define Web Dir това пътя от домейна до хома на проекта
+define("WEB_DIR", '/www'.$getBase);
+
+// Define suffix constant if there any. It is mainly for the DEV for prod may be empty
+define('URL_SUFFIX_DIR', WEB_DIR);
+define('REST_INDEX_MODULE', 1);
+
+// Define Ext library 
+define("EXT_LIB", '/extlib');
+
+// Define Ext library
+define("JQUERY_HOME", EXT_LIB.'/jquery');
+
+// Define session prefix
+define("SESSION_PREFIX", 'ivas_dev_');
+
+
+// Име на средата за разработка за ПРОД е празно 
+define("DEVELOPER_MARK", 'ДЕВ СРЕДА');
+
+// Име на средата за разработка за ПРОД е празно
+define("BOOTSTRAP_VERSION", "bootstrap_v3.3.6");
+
+// Име на средата за разработка за ПРОД е празно
+define("BOOTSTRAP_HOME", EXT_LIB.'/'.BOOTSTRAP_VERSION);
+
+// When no adverts  need then disable ADSENSE else set it enabled
+define("ADSENSE", 'disabled');
+
+// Set session location
+ini_set('session.save_path', ENV_HOME.'/sessions');
